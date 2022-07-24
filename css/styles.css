@@ -1,19 +1,31 @@
 /* CSS Reset */
 @import url(https://cdn.skypack.dev/sanitize.css);
 
-:root{}
+:root{
+    --ui-nav-grey: #1c1c1c;
+    --ui-grey: #2e2e2e;
+    --ui-black: #0e0e0e;
+    --font-on-ui-black: #ffffff;
+    --font-on-ui-grey: #dedede;
+    --link-text-color-blue: #065fd4;
+    --link-text-color-blue-hover: #0770fa;
+    --link-text-color-purple: #834fd6;
+    --link-text-color-purple-hover: #9a5dfc;
+}
 
-body{
-    background: hsl(0, 0%, 97%);
+body {
+    font-family: Verdana, sans-serif;
+    background: var(--ui-black);
+    color: var(--font-on-ui-grey);
 }
 
 .hero-container {
     text-align: center;
     border: 1px solid black;
     border-radius: 5px;
-    box-shadow: 1px 1px 3px grey;
     padding: 30px;
-    background: hsl(0, 0%, 95%);
+    background: var(--ui-grey);
+    animation: 0.5s ease-in-out 0s 1 fadeIn;
 }
 
 .center-page {
@@ -21,4 +33,13 @@ body{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 100;
+    }
 }
