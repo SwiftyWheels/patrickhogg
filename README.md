@@ -1,5 +1,11 @@
 # patrickhogg
 This project will be my portfolio website to share details about myself, my work, and my journey in development.
 
+# Preview
+<img style="width: 800px; height: 500px;" src="images/previews/Website Snapshot.png" alt="screenshot of my website">
+
 # Roadmap
-Currently, there is nothing up on the website. This lack of content is because I have been extremely busy in my school work. This will change as I have more free time to update my website.
+- ~Header~
+- ~About Me Section~
+- Work Section
+- Resume Section
