@@ -12,6 +12,7 @@ nav {
     display: flex;
     justify-content: right;
     position: sticky;
+    position: -webkit-sticky;
 }
 
 nav a{

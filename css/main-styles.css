@@ -17,12 +17,7 @@
 main > :nth-child(odd), main > :nth-child(even) {
     background: var(--ui-grey);
     border-radius: 5px;
-}
-
-main > :nth-child(odd) > *, main > :nth-child(even) > *{
-    /*opacity: 0;*/
-    /*transform-origin: top;*/
-    /*animation: 0.5s ease-in-out 1s 1 fadeIn forwards;*/
+    overflow: hidden;
 }
 
 main h2{

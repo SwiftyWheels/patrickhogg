@@ -25,11 +25,39 @@
     }
 }
 
+@keyframes slideInLeft {
+    0%{
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    0%{
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
 /* Transition Animation Classes */
 
 .transition-down {
     transform-origin: top;
     animation: grow-out 0.1s ease-in-out forwards alternate;
+}
+
+/* Slide in animations */
+
+.slide-in-from-left{
+    animation: slideInLeft 0.5s ease-in-out forwards;
+}
+
+.slide-in-from-right{
+    animation: slideInRight 0.5s ease-in-out forwards;
 }
 
 /* Fade In Animation Classes  */

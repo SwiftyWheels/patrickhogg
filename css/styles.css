@@ -19,6 +19,8 @@
 
 html{
     scroll-behavior: smooth;
+    /*!* This prevents horizontal scrollbars on slide in animations *!*/
+    overflow-x: hidden;
 }
 
 body {
