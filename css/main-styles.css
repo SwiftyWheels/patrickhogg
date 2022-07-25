@@ -1,0 +1,42 @@
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 595px) {
+    main > :nth-child(odd), main > :nth-child(even) {
+        margin: 10px;
+        padding: 10px 50px;
+    }
+}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {
+    main > :nth-child(odd), main > :nth-child(even) {
+        margin: 10px 50px;
+        padding: 10px 50px;
+    }
+}
+
+main > :nth-child(odd), main > :nth-child(even) {
+    background: var(--ui-grey);
+    border-radius: 5px;
+}
+
+main > :nth-child(odd) > *, main > :nth-child(even) > *{
+    /*opacity: 0;*/
+    /*transform-origin: top;*/
+    /*animation: 0.5s ease-in-out 1s 1 fadeIn forwards;*/
+}
+
+main h2{
+    text-align: center;
+}
+
+main p > span{
+    font-weight: bold;
+}
+
+main p > span.button{
+    color: var(--link-text-color-purple);
+}
+
+main p > span.button:hover{
+    color: var(--link-text-color-purple-hover);
+}

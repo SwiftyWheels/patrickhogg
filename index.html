@@ -27,6 +27,7 @@
                 <a href="#aboutMe">About Me</a>
                 <a href="#myWork">Work</a>
                 <a href="#myResume">Resume</a>
+                <a href="#heroContainer">Socials</a>
             </div>
         </div>
         <!-- Larger screen sizes will show this -->
@@ -34,19 +35,24 @@
             <a href="#aboutMe">About Me</a>
             <a href="#myWork">Work</a>
             <a href="#myResume">Resume</a>
+            <a href="#heroContainer">Socials</a>
         </div>
     </nav>
 </header>
 
-<div class="hero-container">
-    <h1>Hello, I'm <span>Patrick Hogg.</span></h1>
-    <p>Website is currently under construction.</p>
-    <div>
-        <a href="https://www.linkedin.com/in/patrick-hogg">
+<div id="heroContainer" class="hero-container">
+    <div class="fade-in-half-second">
+        <h1>Hello, I'm <span>Patrick Hogg.</span></h1>
+    </div>
+    <div class="fade-in-one-second">
+        <p>Website is currently under construction.</p>
+    </div>
+    <div id="socials" class="fade-in-one-second">
+        <a href="https://www.linkedin.com/in/patrick-hogg" target="_blank">
             <img src="https://img.shields.io/badge/LinkedIn-_?style=for-the-badge&color=0A66C2&logo=LinkedIn&logoColor=white"
                  alt="link to LinkedIn profile">
         </a>
-        <a href="https://github.com/SwiftyWheels">
+        <a href="https://github.com/SwiftyWheels" target="_blank">
             <img src="https://img.shields.io/badge/GitHub-000000?style=for-the-badge&logo=GitHub&logoColor=white"
                  alt="link to GitHub profile">
         </a>
@@ -56,38 +62,38 @@
     <div id="aboutMe">
         <h2>About Me</h2>
         <div class="short-intro">
-            <p>I am an aspiring Full Stack Developer, currently enrolled at Sheridan College.</p>
-            <small>Please don't mind my UI design, as it's not a strength of mine!</small>
+            <p>I am a Full Stack Developer, currently enrolled at Sheridan College.</p>
+        </div>
+        <div id="tldr-intro-button">
+            <p><span class="button">Click me</span> for the TLDR</p>
+        </div>
+        <div class="tldr-intro transition-down hidden">
+            <p>Fell in love with video games, loved automation with scripts, now I am pursuing software engineering. I
+                am working with many languages such as <span>Java, HTML, CSS, JS, PHP, Shell and C#</span>.</p>
         </div>
         <div id="long-intro-button">
-            <p><span>Click me</span> for the long intro</p>
+            <p><span class="button">Click me</span> for the long intro</p>
         </div>
-        <div class="long-intro transition hidden">
+        <div class="long-intro transition-down hidden">
             <p>Like many people, my interest in computers arose when I was just a small child, playing video games on
                 the many consoles I was fortunate to have. It always intrigued me how people were able to build and
                 develop the hardware and software that enabled millions of people to enjoy these video games. As I
                 became older and after receiving my first PC, I also fell in love with desktop video games. These are
                 back in the days of the original MapleStory, World of Warcraft and Runescape.</p>
-            <p>Over the next few years, I dabbled around with scripting in different languages such as <span>LUA, Python and AHK(AutoHotKey)</span>
+            <p>Over the next few years, I dabbled around with scripting in different languages such as <span>LUA, Python and AutoHotKey</span>
                 to give myself an edge in any video game I wanted. I soon realized that I was nearly scratching the
-                surface of programming. Many years later, I am now working with many languages such as <span>Java, HTML, CSS, JS, PHP, Shell and C#</span>.
+                surface of programming. Many years later, I am now working with many languages such as <span>Java, HTML, CSS, JS, PHP and Shell</span>.
                 I hope to continue on this journey for the entirety of my life, as the saying goes, <span>"If you are not learning, you are not living."</span>
             </p>
-        </div>
-        <div id="tldr-intro-button">
-            <p><span>Click me</span> for the TLDR</p>
-        </div>
-        <div class="tldr-intro transition hidden">
-            <p>Fell in love with video games, loved automation with scripts, now I am pursuing real software
-                engineering. I am working with many languages such as
-                <span>Java, HTML, CSS, JS, PHP, Shell and C#</span>.</p>
         </div>
     </div>
     <div id="myWork">
         <h2>My Work</h2>
+        <p>Coming soon!</p>
     </div>
     <div id="myResume">
         <h2>My Resume</h2>
+        <p>Coming soon!</p>
     </div>
 </main>
 

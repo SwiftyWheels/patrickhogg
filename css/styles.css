@@ -3,6 +3,7 @@
 @import url(animations.css);
 @import url(nav-styles.css);
 @import url(hero-styles.css);
+@import url(main-styles.css);
 
 :root{
     --ui-nav-grey: #1c1c1c;
@@ -32,11 +33,6 @@ body {
     html{
         scroll-padding: 55px;
     }
-
-    main > :nth-child(odd), main > :nth-child(even) {
-        margin: 10px;
-        padding: 10px 50px;
-    }
 }
 
 /* Small screen devices (600px and above) */
@@ -48,11 +44,6 @@ body {
     html{
         scroll-padding: 45px;
     }
-
-    main > :nth-child(odd), main > :nth-child(even) {
-        margin: 10px 50px;
-        padding: 10px 50px;
-    }
 }
 
 /* Big screen devices (889px and above) */
@@ -63,24 +54,6 @@ body {
 @media only screen and (min-width: 1200px) {
 }
 
-main > :nth-child(odd), main > :nth-child(even) {
-    background: var(--ui-grey);
-    border-radius: 5px;
-}
-
-main h2{
-    text-align: center;
-}
-
-main p > span{
-    color: var(--link-text-color-purple);
-}
-
 .hidden{
     display: none;
-}
-
-.transition{
-    transform-origin: top;
-    animation: grow-out 0.1s ease-in-out forwards alternate;
 }
