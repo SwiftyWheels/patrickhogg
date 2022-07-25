@@ -9,13 +9,76 @@
     <title>Patrick Hogg's Portfolio</title>
 
     <link rel="stylesheet" href="css/styles.css">
+    <script src="scripts/scripts.js"></script>
 </head>
 <body>
 
-<div class="hero-container center-page">
-    <h1>Patrick Hogg's Portfolio</h1>
+<header>
+    <nav class="nav">
+        <!-- This will only show on smaller devices -->
+        <div class="nav-dropdown">
+            <div class="nav-hamburger-container">
+                <div class="nav-hamburger"></div>
+                <div class="nav-hamburger"></div>
+                <div class="nav-hamburger"></div>
+            </div>
+            <div class="nav-dropdown-content">
+                <a href="#aboutMe">About Me</a>
+                <a href="#myWork">Work</a>
+                <a href="#myResume">Resume</a>
+            </div>
+        </div>
+        <!-- Larger screen sizes will show this -->
+        <div class="nav-regular">
+            <a href="#aboutMe">About Me</a>
+            <a href="#myWork">Work</a>
+            <a href="#myResume">Resume</a>
+        </div>
+    </nav>
+</header>
+
+<div class="hero-container">
+    <h1>Hello, I'm <span>Patrick Hogg.</span></h1>
     <p>Website is currently under construction.</p>
 </div>
+<main>
+    <div id="aboutMe">
+        <h2>About Me</h2>
+        <div class="short-intro">
+            <p>I am an aspiring Full Stack Developer, currently enrolled at Sheridan College.</p>
+            <small>Please don't mind my UI design, as it's not a strength of mine!</small>
+        </div>
+        <div id="long-intro-button">
+            <p><span>Click me</span> for the long intro</p>
+        </div>
+        <div class="long-intro transition hidden">
+            <p>Like many people, my interest in computers arose when I was just a small child, playing video games on
+                the many consoles I was fortunate to have. It always intrigued me how people were able to build and
+                develop the hardware and software that enabled millions of people to enjoy these video games. As I
+                became older and after receiving my first PC, I also fell in love with desktop video games. These are
+                back in the days of the original MapleStory, World of Warcraft and Runescape.</p>
+            <p>Over the next few years, I dabbled around with scripting in different languages such as <span>LUA, Python and AHK(AutoHotKey)</span>
+                to give myself an edge in any video game I wanted. I soon realized that I was nearly scratching the
+                surface of programming. Many years later, I am now working with many languages such as <span>Java, HTML, CSS, JS, PHP, Shell and C#</span>.
+                I hope to continue on this journey for the entirety of my life, as the saying goes, <span>"If you are not learning, you are not living."</span>
+            </p>
+        </div>
+        <div id="tldr-intro-button">
+            <p><span>Click me</span> for the TLDR</p>
+        </div>
+        <div class="tldr-intro transition hidden">
+            <p>Fell in love with video games, loved automation with scripts, now I am pursuing real software
+                engineering. I am working with many languages such as
+                <span>Java, HTML, CSS, JS, PHP, Shell and C#</span>.</p>
+        </div>
+    </div>
+    <div id="myWork">
+        <h2>My Work</h2>
+    </div>
+    <div id="myResume">
+        <h2>My Resume</h2>
+    </div>
+</main>
 
 </body>
 </html>

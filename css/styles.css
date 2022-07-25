@@ -1,5 +1,8 @@
 /* CSS Reset */
 @import url(https://cdn.skypack.dev/sanitize.css);
+@import url(animations.css);
+@import url(nav-styles.css);
+@import url(hero-styles.css);
 
 :root{
     --ui-nav-grey: #1c1c1c;
@@ -13,33 +16,71 @@
     --link-text-color-purple-hover: #9a5dfc;
 }
 
+html{
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: Verdana, sans-serif;
     background: var(--ui-black);
     color: var(--font-on-ui-grey);
 }
 
-.hero-container {
-    text-align: center;
-    border: 1px solid black;
-    border-radius: 5px;
-    padding: 30px;
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 595px) {
+    /* Changes the scroll padding to accommodate mobile*/
+    html{
+        scroll-padding: 55px;
+    }
+
+    main > :nth-child(odd), main > :nth-child(even) {
+        margin: 10px;
+        padding: 10px 50px;
+    }
+}
+
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 600px) {}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {
+    /* Changes the scroll padding to accommodate the header */
+    html{
+        scroll-padding: 45px;
+    }
+
+    main > :nth-child(odd), main > :nth-child(even) {
+        margin: 10px 50px;
+        padding: 10px 50px;
+    }
+}
+
+/* Big screen devices (889px and above) */
+@media only screen and (min-width: 889px) {
+}
+
+/* Extra big screen devices (1200px and above) */
+@media only screen and (min-width: 1200px) {
+}
+
+main > :nth-child(odd), main > :nth-child(even) {
     background: var(--ui-grey);
-    animation: 0.5s ease-in-out 0s 1 fadeIn;
+    border-radius: 5px;
 }
 
-.center-page {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+main h2{
+    text-align: center;
 }
 
-@keyframes fadeIn {
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 100;
-    }
+main p > span{
+    color: var(--link-text-color-purple);
+}
+
+.hidden{
+    display: none;
+}
+
+.transition{
+    transform-origin: top;
+    animation: grow-out 0.1s ease-in-out forwards alternate;
 }

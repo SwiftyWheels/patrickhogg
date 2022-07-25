@@ -1,0 +1,82 @@
+/* Main Navigation */
+
+header{
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+
+nav {
+    background: var(--ui-nav-grey);
+    padding: 10px;
+    display: flex;
+    justify-content: right;
+    position: sticky;
+}
+
+nav a{
+    text-decoration: none;
+    padding: 0 10px 0 10px;
+    color: var(--font-on-ui-grey)
+}
+
+nav a:hover{
+    color: var(--link-text-color-purple-hover)
+}
+
+/* Dropdown Content (Hidden by Default) */
+.nav-dropdown-content {
+    display: none;
+    position: absolute;
+    background: var(--ui-nav-grey);
+    min-width: 160px;
+    box-shadow: 0 8px 16px  rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.nav-dropdown-content a {
+    color: var(--font-on-ui-grey);
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 595px) {
+    .nav{
+        display: block;
+    }
+
+    .nav-regular{
+        display: none;
+    }
+
+    .nav-hamburger{
+        width: 35px;
+        height: 5px;
+        background-color: var(--font-on-ui-grey);
+        margin: 6px 0;
+        border-radius: 5px;
+        transform-origin: center center;
+    }
+    .nav-hamburger-container{
+        width: 37px;
+    }
+
+    /* Change color of dropdown links on hover */
+    .nav-dropdown-content a:hover {
+        background-color: var(--ui-grey)
+    }
+
+    .nav-dropdown:hover > .nav-hamburger-container{
+        animation: rotate 0.15s ease-in-out both;
+    }
+
+    /* Show the dropdown menu on hover */
+    .nav-dropdown:hover .nav-dropdown-content {
+        display: block;
+        animation: grow-out 0.15s ease-in-out;
+    }
+
+}
