@@ -1,6 +1,7 @@
 /* CSS Reset */
 @import url(https://cdn.skypack.dev/sanitize.css);
 @import url(animations.css);
+@import url(button-styles.css);
 @import url(nav-styles.css);
 @import url(hero-styles.css);
 @import url(main-styles.css);

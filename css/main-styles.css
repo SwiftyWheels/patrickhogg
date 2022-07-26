@@ -24,14 +24,6 @@ main h2{
     text-align: center;
 }
 
-main p > span{
+main p > span:not(.button){
     font-weight: bold;
-}
-
-main p > span.button{
-    color: var(--link-text-color-purple);
-}
-
-main p > span.button:hover{
-    color: var(--link-text-color-purple-hover);
 }
