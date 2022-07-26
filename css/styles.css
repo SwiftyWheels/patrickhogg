@@ -5,6 +5,7 @@
 @import url(nav-styles.css);
 @import url(hero-styles.css);
 @import url(main-styles.css);
+@import url(resume-styles.css);
 
 :root{
     --ui-nav-grey: #1c1c1c;
@@ -31,7 +32,7 @@ body {
 }
 
 /* For extremely small screen devices (595px and below) */
-@media only screen and (max-width: 595px) {
+@media only screen and (max-width: 599px) {
     /* Changes the scroll padding to accommodate mobile*/
     html{
         scroll-padding: 55px;
@@ -39,7 +40,12 @@ body {
 }
 
 /* Small screen devices (600px and above) */
-@media only screen and (min-width: 600px) {}
+@media only screen and (min-width: 600px) {
+    /* Changes the scroll padding to accommodate the header */
+    html{
+        scroll-padding: 45px;
+    }
+}
 
 /* Medium screen devices (768px and above) */
 @media only screen and (min-width: 768px) {
@@ -55,6 +61,16 @@ body {
 
 /* Extra big screen devices (1200px and above) */
 @media only screen and (min-width: 1200px) {
+}
+
+.divider-black{
+    height: 1px;
+    background: var(--ui-nav-grey);
+}
+
+.divider-purple {
+    height: 1px;
+    background: var(--link-text-color-purple);
 }
 
 .hidden{

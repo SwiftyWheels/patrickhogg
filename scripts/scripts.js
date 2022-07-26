@@ -19,4 +19,8 @@ function init() {
     // Handles the toggling of animations when scrolling by
     animationHelper.toggleAnimationsOnScroll(oddDivs, "slide-in-from-left");
     animationHelper.toggleAnimationsOnScroll(evenDivs, "slide-in-from-right");
+
+    let skillsItems = document.querySelectorAll("#resumeSkillsSection ul > li");
+
+    animationHelper.toggleAnimationsOnScroll(skillsItems, "fade-in-no-delay");
 }

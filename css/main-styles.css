@@ -1,13 +1,13 @@
 /* For extremely small screen devices (595px and below) */
-@media only screen and (max-width: 595px) {
+@media only screen and (max-width: 599px) {
     main > :nth-child(odd), main > :nth-child(even) {
         margin: 10px;
         padding: 10px 50px;
     }
 }
 
-/* Medium screen devices (768px and above) */
-@media only screen and (min-width: 768px) {
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 600px) {
     main > :nth-child(odd), main > :nth-child(even) {
         margin: 10px 50px;
         padding: 10px 50px;

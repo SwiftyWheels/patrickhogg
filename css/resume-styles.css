@@ -1,0 +1,81 @@
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 767px) {
+    #resumeSkillsSection ul{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #resumeSkillsSection ul > li{
+        background: var(--ui-nav-grey);
+        width: 100px;
+        height: 100px;
+        margin: 10px;
+        display: flex;
+        border-radius: 25px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 600px) {
+    #resumeSkillsSection ul > li{
+        background: var(--ui-nav-grey);
+        width: 200px;
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 25px;
+        align-items: center;
+        justify-content: center;
+        transform: scale(75%);
+    }
+}
+
+/* Medium screen devices (768px and above) */
+@media only screen and (min-width: 768px) {
+    #resumeSkillsSection ul > li{
+        transform: scale(100%);
+    }
+}
+
+#resumeSkillsSection h3 {
+    text-align: center;
+}
+
+
+
+
+#resumeSkillsSection{
+    display: flex;
+    flex-direction: column;
+}
+
+#resumeSkillsSection ul{
+    display: flex;
+    list-style: none;
+    text-align: center;
+    justify-content: space-evenly;
+    margin: 0;
+    padding: 0;
+}
+
+#resumeSkillsSection ul > li{
+    background: var(--ui-nav-grey);
+    width: 200px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transform: scale(75%);
+}
+
+#resumeSkillsSection ul > li > img{
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    padding: 0;
+}
