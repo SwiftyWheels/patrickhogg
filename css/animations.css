@@ -25,6 +25,15 @@
     }
 }
 
+@keyframes grow-out-centered {
+    0% {
+        transform: scaleY(0);
+    }
+    100% {
+        transform: scaleY(1) translateX(-60px);
+    }
+}
+
 @keyframes slideInLeft {
     0%{
         transform: translateX(-100%);

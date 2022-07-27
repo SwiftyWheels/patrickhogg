@@ -3,42 +3,6 @@
 // This can also be placed inside a function to make the function strict mode
 "use strict";
 /**
- * Handles the "Click Me" buttons in the About Me section.
- */
-function handleAboutMeToggles() {
-    // Grabs the about me element
-    let aboutMeDiv = document.querySelector("#aboutMe");
-    // Gets the longIntro span
-    let longIntroButton = aboutMeDiv.querySelector("#long-intro-button > p > span");
-    // Gets the tldrIntro span
-    let tldrIntroButton = aboutMeDiv.querySelector("#tldr-intro-button > p > span");
-
-    // Adds the parents, parent next element sibling to the array of divs for each intro button
-    let introDivs = [];
-    // span > parent = p > parent = long-intro div
-    introDivs.push(longIntroButton.parentElement.parentElement.nextElementSibling);
-    // span > parent = p > parent = tldr-intro div
-    introDivs.push(tldrIntroButton.parentElement.parentElement.nextElementSibling);
-
-    // The handle click method that will be used when either
-    let handleClick = {
-        handleEvent(event) {
-            // Get the target of the event
-            let target = event.target;
-            // Get the div that is directly below the target
-            let belowDiv = target.parentElement.parentElement.nextElementSibling;
-
-            // Toggle the hidden class of the below div and any other intro divs that may be open.
-            toggleClasses("hidden", belowDiv, introDivs);
-        }
-    }
-
-    // Add the handleClick event handler to both intro buttons
-    longIntroButton.addEventListener("click", handleClick);
-    tldrIntroButton.addEventListener("click", handleClick);
-}
-
-/**
  * Toggles the specified class on the targetDiv. Will also remove the specified class from any other divs that are
  * passed as a list of div elements. This is mainly useful for toggling a "hidden" class on elements.
  *
@@ -57,6 +21,30 @@ function toggleClasses(classToToggle, targetDiv, otherDivList = []) {
         if (node !== targetDiv) {
             if (!node.classList.contains(classToToggle)) {
                 node.classList.add(classToToggle);
+            }
+        }
+    }
+}
+
+/**
+ * Toggles the specified class on the targetDiv. Will also remove the specified class from any other divs that are
+ * passed as a list of div elements. This is mainly useful for toggling a "hidden" class on elements.
+ *
+ * @param classToToggle the string value of the class to toggle
+ * @param targetDiv the div element that will need toggling of the class provided
+ * @param otherDivList a list of other div elements that will also be given the class, if they don't already have it.
+ */
+function reverseToggleClasses(classToToggle, targetDiv, otherDivList = []) {
+    if (targetDiv.classList.contains(classToToggle)) {
+        targetDiv.classList.remove(classToToggle);
+    } else {
+        targetDiv.classList.add(classToToggle);
+    }
+
+    for (const node of otherDivList) {
+        if (node !== targetDiv) {
+            if (node.classList.contains(classToToggle)) {
+                node.classList.remove(classToToggle);
             }
         }
     }
@@ -102,6 +90,6 @@ function scrollObserver(observedElement, animationClass, observedElementWrapper 
     }
 }
 
-export {handleAboutMeToggles, toggleClasses, toggleAnimationsOnScroll};
+export {toggleClasses, reverseToggleClasses, toggleAnimationsOnScroll};
 
 

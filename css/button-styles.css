@@ -2,16 +2,30 @@
     color: var(--link-text-color-purple);
     border: 1px solid var(--link-text-color-purple);
     background: var(--ui-nav-grey);
+    display: inline-block;
     text-decoration: none;
     text-align: center;
     align-self: center;
     border-radius: 5px;
     width: 7em;
     padding: 5px;
-    margin: 50px 0;
+    user-select: none;
 }
 
 .button:hover{
     color: var(--font-on-ui-grey);
     border: 1px solid var(--link-text-color-purple-hover);
+}
+
+.button-selected{
+    color: var(--font-on-ui-grey);
+    border: 1px solid var(--link-text-color-purple-hover);
+}
+
+.hero-container .button{
+    margin: 50px 50px;
+}
+
+.resume-nav .button{
+    margin: 10px;
 }

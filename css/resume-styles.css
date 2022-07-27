@@ -7,7 +7,7 @@
     }
 
     #resumeSkillsSection ul > li{
-        background: var(--ui-nav-grey);
+        /*background: var(--ui-nav-grey);*/
         width: 100px;
         height: 100px;
         margin: 10px;
@@ -22,7 +22,7 @@
 /* Small screen devices (600px and above) */
 @media only screen and (min-width: 600px) {
     #resumeSkillsSection ul > li{
-        background: var(--ui-nav-grey);
+        /*background: var(--ui-nav-grey);*/
         width: 200px;
         height: 200px;
         display: flex;
@@ -41,12 +41,16 @@
     }
 }
 
-#resumeSkillsSection h3 {
-    text-align: center;
+.resume-nav{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-
-
+#resumeSkillsSection h3, h4 {
+    text-align: center;
+}
 
 #resumeSkillsSection{
     display: flex;
@@ -57,25 +61,26 @@
     display: flex;
     list-style: none;
     text-align: center;
-    justify-content: space-evenly;
-    margin: 0;
+    justify-content: center;
     padding: 0;
 }
 
 #resumeSkillsSection ul > li{
-    background: var(--ui-nav-grey);
-    width: 200px;
-    height: 200px;
+    /*background: var(--ui-nav-grey);*/
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    transform: scale(75%);
+    height: 165px;
+    width: 120px;
 }
 
 #resumeSkillsSection ul > li > img{
     border-radius: 50px;
-    width: 100px;
-    height: 100px;
-    padding: 0;
+    width: 96px;
+    height: 96px;
+}
+
+#myResume .resume-education, .resume-work{
+    height: 100vh;
 }

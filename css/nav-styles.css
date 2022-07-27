@@ -44,7 +44,7 @@ nav a:hover{
 }
 
 /* For extremely small screen devices (595px and below) */
-@media only screen and (max-width: 595px) {
+@media only screen and (max-width: 767px) {
     .nav{
         display: block;
     }
@@ -61,6 +61,7 @@ nav a:hover{
         border-radius: 5px;
         transform-origin: center center;
     }
+
     .nav-hamburger-container{
         width: 37px;
     }
@@ -75,9 +76,16 @@ nav a:hover{
     }
 
     /* Show the dropdown menu on hover */
-    .nav-dropdown:hover .nav-dropdown-content {
+    .nav .nav-dropdown:hover .nav-dropdown-content {
         display: block;
         animation: grow-out 0.15s ease-in-out;
+    }
+
+    .resume-nav:hover .nav-dropdown-content{
+        display: flex;
+        flex-direction: column;
+        transform-origin: top;
+        animation: grow-out-centered 0.15s ease-in-out forwards;
     }
 
 }
