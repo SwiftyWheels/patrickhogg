@@ -1,0 +1,56 @@
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 600px) {
+
+}
+
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 601px) {
+    .accordion-title{
+        min-width: 50vw;
+        max-width: 50vw;
+    }
+
+    .accordion-content {
+        min-width: 50vw;
+        max-width: 50vw;
+    }
+
+}
+
+.accordion-container{
+    overflow: hidden;
+    margin: 10px 0 5px 0;
+    /*transition: 0.4s;*/
+}
+
+.accordion-title{
+    border-radius: 5px;
+    background: var(--ui-nav-grey);
+    padding: 5px;
+    font-weight: bold;
+    color: var(--link-text-color-purple);
+    text-align: center;
+    user-select: none;
+}
+
+.accordion-content {
+    display: inline-block;
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
+    transition: max-height 0.2s ease-out;
+}
+
+.accordion-content > p{
+    padding: 10px;
+}
+
+.border{
+    border: 1px solid var(--link-text-color-purple);
+    border-radius: 5px;
+}
+
+.accordion-selected{
+    color: var(--font-on-ui-grey);
+    border: 1px solid var(--link-text-color-purple-hover);
+}

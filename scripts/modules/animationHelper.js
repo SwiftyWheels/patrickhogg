@@ -41,10 +41,18 @@ function reverseToggleClasses(classToToggle, targetDiv, otherDivList = []) {
         targetDiv.classList.add(classToToggle);
     }
 
-    for (const node of otherDivList) {
-        if (node !== targetDiv) {
-            if (node.classList.contains(classToToggle)) {
-                node.classList.remove(classToToggle);
+    if (otherDivList.length > 1) {
+        for (const node of otherDivList) {
+            if (node !== targetDiv) {
+                if (node.classList.contains(classToToggle)) {
+                    node.classList.remove(classToToggle);
+                }
+            }
+        }
+    }else{
+        if (otherDivList.length !== 0 && otherDivList !== targetDiv) {
+            if (otherDivList.classList.contains(classToToggle)) {
+                otherDivList.classList.remove(classToToggle);
             }
         }
     }

@@ -13,6 +13,7 @@ function init() {
     // Handles the about me "click me" buttons
     handleAboutMeToggles();
     handleResumeToggles();
+    handleAccordions();
 
     // Grab the divs inside the main element
     let oddDivs = document.querySelectorAll("main > div:nth-child(odd)");
@@ -22,9 +23,11 @@ function init() {
     animationHelper.toggleAnimationsOnScroll(oddDivs, "slide-in-from-left");
     animationHelper.toggleAnimationsOnScroll(evenDivs, "slide-in-from-right");
 
-    let skillsItems = document.querySelectorAll("#resumeSkillsSection ul > li, h4");
+    let skillsItems = document.querySelectorAll("#myResume");
 
-    animationHelper.toggleAnimationsOnScroll(skillsItems, "fade-in-no-delay");
+    if (!document.querySelector("#myResume").classList.contains("slide-in-from-left")) {
+        animationHelper.toggleAnimationsOnScroll(skillsItems, "fade-in-no-delay");
+    }
 }
 
 /**
@@ -33,18 +36,11 @@ function init() {
 function handleAboutMeToggles() {
     // Grabs the about me element
     let aboutMeDiv = document.querySelector("#aboutMe");
-    // Gets the longIntro span
-    let longIntroButton = aboutMeDiv.querySelector("#long-intro-button > p > span");
-    // Gets the tldrIntro span
-    let tldrIntroButton = aboutMeDiv.querySelector("#tldr-intro-button > p > span");
-
-    // Adds the parents, parent next element sibling to the array of divs for each intro button
-    let introDivs = [];
-    // span > parent = p > parent = long-intro div
-    introDivs.push(longIntroButton.parentElement.parentElement.nextElementSibling);
-    // span > parent = p > parent = tldr-intro div
-    introDivs.push(tldrIntroButton.parentElement.parentElement.nextElementSibling);
-
+    // Grab all the buttons
+    let buttonSpans = aboutMeDiv.querySelectorAll(".button");
+    // Grab the intro divs
+    let divs = aboutMeDiv.querySelectorAll("div.long-intro, div.tldr-intro");
+    console.log(divs);
     // The handle click method that will be used when either
     let handleClick = {
         handleEvent(event) {
@@ -54,13 +50,13 @@ function handleAboutMeToggles() {
             let belowDiv = target.parentElement.parentElement.nextElementSibling;
 
             // Toggle the hidden class of the below div and any other intro divs that may be open.
-            animationHelper.toggleClasses("hidden", belowDiv, introDivs);
+            animationHelper.toggleClasses("hidden", belowDiv, divs);
+            animationHelper.reverseToggleClasses("button-selected", target, buttonSpans);
         }
     }
 
     // Add the handleClick event handler to both intro buttons
-    longIntroButton.addEventListener("click", handleClick);
-    tldrIntroButton.addEventListener("click", handleClick);
+    buttonSpans.forEach(button => button.addEventListener("click", handleClick));
 }
 
 function handleResumeToggles() {
@@ -68,16 +64,12 @@ function handleResumeToggles() {
     let resumeButtonsNav = document.querySelectorAll(".resume-nav .nav-dropdown .button");
     let resumeButtons = document.querySelectorAll(".resume-nav .nav-regular .button");
     let allButtons = joinArrays(resumeButtonsNav, resumeButtons);
-
-
     console.log(allButtons);
-
 
     let handleClick = {
         handleEvent(event) {
             let target = event.target;
 
-            //todo: Fix animations in skills section when loading.
             if (!target.classList.contains("button-selected")){
                 for (let i = 0; i < resumeButtonsNav.length; i++) {
                     if (resumeButtonsNav[i] === target) {
@@ -104,13 +96,48 @@ function handleResumeToggles() {
     resumeButtons.forEach(button => button.addEventListener("click", handleClick));
 }
 
-function joinArrays(firstArray, secondArray) {
-    let joinedArrays = []
-    for (const firstArrayElement of firstArray) {
-        joinedArrays.push(firstArrayElement);
+function handleAccordions(){
+    let accordions = document.getElementsByClassName("accordion-container");
+
+    for (const accordion of accordions) {
+        let accordionTitle = accordion.querySelector(".accordion-title");
+        accordionTitle.addEventListener("click", function (){
+            let accordionContent = accordionTitle.nextElementSibling;
+            let contentChildren = accordionContent.children;
+            let scrollHeight = 0;
+
+            animationHelper.reverseToggleClasses("accordion-selected", this);
+            for (let contentChild of contentChildren) {
+                scrollHeight += contentChild.scrollHeight + 100;
+                console.log(scrollHeight);
+            }
+            console.log(contentChildren);
+            if (accordionContent.style.maxHeight) {
+                accordionContent.style.maxHeight = null;
+                accordionContent.classList.remove("border");
+                accordionContent.style.padding = null;
+                accordionContent.style.opacity = null;
+            }else{
+                accordionContent.style.maxHeight = scrollHeight + "px";
+                accordionContent.classList.add("border");
+                accordionContent.style.padding = "10px";
+                accordionContent.style.opacity = "100%";
+            }
+        })
     }
-    for (const secondArrayElement of secondArray) {
-        joinedArrays.push(secondArrayElement);
+}
+
+/**
+ * Joins any amount of array objects. They should be of the same type, but this will work with any type.
+ * @param arrays the arrays that you wish to join.
+ * @returns {*[]} An array that contains the joined arrays.
+ */
+function joinArrays(...arrays) {
+    let joinedArrays = []
+    for (const array of arrays) {
+        for (const arrayElement of array) {
+            joinedArrays.push(arrayElement);
+        }
     }
     return joinedArrays;
 }

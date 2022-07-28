@@ -2,9 +2,11 @@
 @import url(https://cdn.skypack.dev/sanitize.css);
 @import url(animations.css);
 @import url(button-styles.css);
+@import url(accordian-styles.css);
 @import url(nav-styles.css);
 @import url(hero-styles.css);
 @import url(main-styles.css);
+@import url(about-me-styles.css);
 @import url(resume-styles.css);
 
 :root{
@@ -37,6 +39,13 @@ body {
     html{
         scroll-padding: 55px;
     }
+    .divider-black{
+        width: 100%;
+    }
+
+    .divider-purple {
+        width: 100%;
+    }
 }
 
 /* Small screen devices (600px and above) */
@@ -44,6 +53,13 @@ body {
     /* Changes the scroll padding to accommodate the header */
     html{
         scroll-padding: 45px;
+    }
+    .divider-black{
+        width: 50vw;
+    }
+
+    .divider-purple {
+        width: 50vw;
     }
 }
 

@@ -1,0 +1,13 @@
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 601px) {
+    #aboutMe > div{
+        max-width: 50vw;
+    }
+}
+
+#aboutMe:not(div.divider-black){
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
