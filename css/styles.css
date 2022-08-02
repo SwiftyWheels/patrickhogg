@@ -7,6 +7,7 @@
 @import url(hero-styles.css);
 @import url(main-styles.css);
 @import url(about-me-styles.css);
+@import url(projects-styles.css);
 @import url(resume-styles.css);
 
 :root{
@@ -25,6 +26,7 @@ html{
     scroll-behavior: smooth;
     /*!* This prevents horizontal scrollbars on slide in animations *!*/
     overflow-x: hidden;
+    font-size: calc(15px + 0.390625vw);
 }
 
 body {
@@ -87,6 +89,17 @@ body {
 .divider-purple {
     height: 1px;
     background: var(--link-text-color-purple);
+}
+
+.border{
+    border: 1px solid var(--link-text-color-purple);
+    border-radius: 5px;
+}
+
+.border-black{
+    border: 1px solid var(--link-text-color-purple);
+    box-shadow: 5px 5px 10px var(--ui-nav-grey), inset 2px 2px 5px var(--ui-nav-grey);
+    border-radius: 5px;
 }
 
 .hidden{

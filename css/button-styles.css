@@ -1,5 +1,5 @@
 .button{
-    color: var(--link-text-color-purple);
+    color: var(--link-text-color-purple-hover);
     border: 1px solid var(--link-text-color-purple);
     background: var(--ui-nav-grey);
     display: inline-block;

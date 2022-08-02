@@ -22,12 +22,6 @@ function init() {
     // Handles the toggling of animations when scrolling by
     animationHelper.toggleAnimationsOnScroll(oddDivs, "slide-in-from-left");
     animationHelper.toggleAnimationsOnScroll(evenDivs, "slide-in-from-right");
-
-    let skillsItems = document.querySelectorAll("#myResume");
-
-    if (!document.querySelector("#myResume").classList.contains("slide-in-from-left")) {
-        animationHelper.toggleAnimationsOnScroll(skillsItems, "fade-in-no-delay");
-    }
 }
 
 /**
@@ -40,7 +34,6 @@ function handleAboutMeToggles() {
     let buttonSpans = aboutMeDiv.querySelectorAll(".button");
     // Grab the intro divs
     let divs = aboutMeDiv.querySelectorAll("div.long-intro, div.tldr-intro");
-    console.log(divs);
     // The handle click method that will be used when either
     let handleClick = {
         handleEvent(event) {
@@ -64,16 +57,16 @@ function handleResumeToggles() {
     let resumeButtonsNav = document.querySelectorAll(".resume-nav .nav-dropdown .button");
     let resumeButtons = document.querySelectorAll(".resume-nav .nav-regular .button");
     let allButtons = joinArrays(resumeButtonsNav, resumeButtons);
-    console.log(allButtons);
 
     let handleClick = {
         handleEvent(event) {
             let target = event.target;
 
-            if (!target.classList.contains("button-selected")){
+            if (!target.classList.contains("button-selected")) {
                 for (let i = 0; i < resumeButtonsNav.length; i++) {
                     if (resumeButtonsNav[i] === target) {
                         animationHelper.toggleClasses("hidden", resumeSectionDivs[i], resumeSectionDivs);
+                        animationHelper.reverseToggleClasses("fade-in-no-delay", resumeSectionDivs[i], resumeSectionDivs);
                         animationHelper.reverseToggleClasses("button-selected", target, allButtons);
                         resumeButtons[i].classList.add("button-selected");
                         break;
@@ -82,6 +75,7 @@ function handleResumeToggles() {
                 for (let i = 0; i < resumeButtons.length; i++) {
                     if (resumeButtons[i] === target) {
                         animationHelper.toggleClasses("hidden", resumeSectionDivs[i], resumeSectionDivs);
+                        animationHelper.reverseToggleClasses("fade-in-no-delay", resumeSectionDivs[i], resumeSectionDivs);
                         animationHelper.reverseToggleClasses("button-selected", target, allButtons);
                         resumeButtonsNav[i].classList.add("button-selected");
                         break;
@@ -96,12 +90,12 @@ function handleResumeToggles() {
     resumeButtons.forEach(button => button.addEventListener("click", handleClick));
 }
 
-function handleAccordions(){
+function handleAccordions() {
     let accordions = document.getElementsByClassName("accordion-container");
 
     for (const accordion of accordions) {
         let accordionTitle = accordion.querySelector(".accordion-title");
-        accordionTitle.addEventListener("click", function (){
+        accordionTitle.addEventListener("click", function () {
             let accordionContent = accordionTitle.nextElementSibling;
             let contentChildren = accordionContent.children;
             let scrollHeight = 0;
@@ -114,12 +108,12 @@ function handleAccordions(){
             console.log(contentChildren);
             if (accordionContent.style.maxHeight) {
                 accordionContent.style.maxHeight = null;
-                accordionContent.classList.remove("border");
+                accordionContent.classList.remove("border-black");
                 accordionContent.style.padding = null;
                 accordionContent.style.opacity = null;
-            }else{
+            } else {
                 accordionContent.style.maxHeight = scrollHeight + "px";
-                accordionContent.classList.add("border");
+                accordionContent.classList.add("border-black");
                 accordionContent.style.padding = "10px";
                 accordionContent.style.opacity = "100%";
             }

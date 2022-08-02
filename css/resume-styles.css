@@ -30,14 +30,12 @@
         border-radius: 25px;
         align-items: center;
         justify-content: center;
-        transform: scale(75%);
     }
 }
 
 /* Medium screen devices (768px and above) */
 @media only screen and (min-width: 768px) {
     #resumeSkillsSection ul > li{
-        transform: scale(100%);
     }
 }
 
@@ -79,9 +77,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 165px;
-    width: 120px;
+    height: 8rem;
+    max-width: 8rem;
 }
+
 
 #resumeSkillsSection ul > li > img{
     border-radius: 50px;

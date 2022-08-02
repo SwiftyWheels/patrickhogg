@@ -1,0 +1,62 @@
+/* For extremely small screen devices (595px and below) */
+@media only screen and (max-width: 600px) {
+    #myWork .card-container {
+        flex-direction: column;
+    }
+
+    #myWork .card-container > .card {
+        padding: 0;
+        margin: 1rem 0;
+    }
+}
+
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 601px) {
+    #myWork .card-container {
+        flex-direction: row;
+    }
+
+    #myWork .card-container > .card {
+        padding: 2rem;
+        margin: 2rem;
+        /*flex: auto;*/
+    }
+}
+
+#myWork{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#myWork .card-container {
+    /*border: 1px solid red;*/
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 75vw;
+    /*flex-direction: row;*/
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+#myWork .card-container > .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 25ch;
+    flex: 50%;
+}
+
+#myWork .card-container > .card:hover{
+    border: 1px solid var(--link-text-color-purple);
+    box-shadow: 5px 5px 10px var(--ui-nav-grey), inset 2px 2px 5px var(--ui-nav-grey);
+    border-radius: 5px;
+}
+
+#myWork .card-container > .card * img {
+    width: 10rem;
+    height: 8rem;
+}

@@ -5,14 +5,12 @@
 
 /* Small screen devices (600px and above) */
 @media only screen and (min-width: 601px) {
-    .accordion-title{
-        min-width: 50vw;
-        max-width: 50vw;
+    .accordion-title, .accordion-title > p{
+        max-width: 75ch;
     }
 
     .accordion-content {
-        min-width: 50vw;
-        max-width: 50vw;
+        max-width: 75ch;
     }
 
 }
@@ -20,7 +18,13 @@
 .accordion-container{
     overflow: hidden;
     margin: 10px 0 5px 0;
+    max-width: 75ch;
     /*transition: 0.4s;*/
+}
+
+.accordion-title:hover{
+    color: var(--font-on-ui-grey);
+    border: 1px solid var(--link-text-color-purple-hover);
 }
 
 .accordion-title{
