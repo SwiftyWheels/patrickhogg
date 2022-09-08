@@ -49,6 +49,7 @@
     align-items: center;
     justify-content: center;
     justify-items: center;
+    width: 50vw;
 }
 
 #myWork .card-container > .card {
