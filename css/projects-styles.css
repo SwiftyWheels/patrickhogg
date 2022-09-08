@@ -25,15 +25,16 @@
 /* Small screen devices (600px and above) */
 @media only screen and (min-width: 1401px) {
     #myWork .card-container {
-        display: grid;
-        grid-template-columns: 30% 30% 30%;
+        display: flex;
+        flex-wrap: wrap;
         gap: 2em;
     }
 
     #myWork .card-container > .card {
         padding: 2rem;
+        margin: 2rem 0;
         height: 45ch;
-        /*flex: auto;*/
+        flex: 1 1 30%; /*grow | shrink | basis */
     }
 }
 
