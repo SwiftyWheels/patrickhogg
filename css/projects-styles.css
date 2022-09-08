@@ -1,24 +1,38 @@
 /* For extremely small screen devices (595px and below) */
 @media only screen and (max-width: 600px) {
     #myWork .card-container {
+        display: flex;
         flex-direction: column;
     }
 
     #myWork .card-container > .card {
-        padding: 0;
+        padding: 1rem;
         margin: 1rem 0;
     }
 }
 
 /* Small screen devices (600px and above) */
-@media only screen and (min-width: 601px) {
-    #myWork .card-container {
-        flex-direction: row;
-    }
+@media only screen and (max-width: 1400px) {
 
     #myWork .card-container > .card {
         padding: 2rem;
         margin: 2rem;
+        height: 45ch;
+        /*flex: auto;*/
+    }
+}
+
+/* Small screen devices (600px and above) */
+@media only screen and (min-width: 1401px) {
+    #myWork .card-container {
+        display: grid;
+        grid-template-columns: 30% 30% 30%;
+        gap: 2em;
+    }
+
+    #myWork .card-container > .card {
+        padding: 2rem;
+        height: 45ch;
         /*flex: auto;*/
     }
 }
@@ -31,23 +45,15 @@
 }
 
 #myWork .card-container {
-    /*border: 1px solid red;*/
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 75vw;
-    /*flex-direction: row;*/
-    justify-content: space-evenly;
     align-items: center;
-    margin: 0;
-    padding: 0;
+    justify-content: center;
+    justify-items: center;
 }
 
 #myWork .card-container > .card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 25ch;
-    flex: 50%;
+    display: grid;
+    grid-template-columns: 100%;
+    justify-items: center;
 }
 
 #myWork .card-container > .card:hover{
@@ -56,7 +62,17 @@
     border-radius: 5px;
 }
 
-#myWork .card-container > .card * img {
+#myWork .card-container > .card > .card-image > img {
     width: 10rem;
     height: 8rem;
+}
+
+
+#myWork .card-container > .card > .card-buttons{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-self: center;
+    justify-content: center;
 }
