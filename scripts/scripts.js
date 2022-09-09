@@ -4,7 +4,6 @@
 "use strict";
 
 import * as animationHelper from "./modules/animationHelper.js";
-import {equalHeights} from "./modules/equalHeights.js";
 
 // Call the init function once the dom has loaded fully
 document.addEventListener("DOMContentLoaded", init);
@@ -15,7 +14,6 @@ function init() {
     handleAboutMeToggles();
     handleResumeToggles();
     handleAccordions();
-    equalizeCardHeights();
 
     // Grab the divs inside the main element
     let oddDivs = document.querySelectorAll("main > div:nth-child(odd)");
@@ -119,20 +117,6 @@ function handleAccordions() {
                 accordionContent.style.opacity = "100%";
             }
         })
-    }
-}
-
-function equalizeCardHeights() {
-    // Grab all the card objects inside the myWork div
-    let cardContainers = document.querySelectorAll(".card-container");
-
-    for (const container of cardContainers) {
-        let cards = container.querySelectorAll(".card");
-        let cardParagraphs = container.querySelectorAll(".card >" +
-            " .card-description > p");
-
-        equalHeights(cards);
-        equalHeights(cardParagraphs);
     }
 }
 

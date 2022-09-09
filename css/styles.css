@@ -9,6 +9,7 @@
 @import url(about-me-styles.css);
 @import url(projects-styles.css);
 @import url(resume-styles.css);
+@import url(footer-styles.css);
 
 :root{
     --ui-nav-grey: #1c1c1c;

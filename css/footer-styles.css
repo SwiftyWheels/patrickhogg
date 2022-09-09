@@ -1,0 +1,5 @@
+footer{
+    background: var(--ui-grey);
+    overflow: hidden;
+    text-align: center;
+}

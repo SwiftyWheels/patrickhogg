@@ -22,8 +22,12 @@
     border: 1px solid var(--link-text-color-purple-hover);
 }
 
-.hero-container .button{
+.hero-container .button:not(.button-social){
     margin: 50px 50px;
+}
+
+.hero-container .button-social {
+    margin: 10px;
 }
 
 .resume-nav .button{

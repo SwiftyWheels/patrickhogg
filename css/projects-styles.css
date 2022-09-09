@@ -11,13 +11,18 @@
     }
 }
 
+/* For extremely small screen devices (595px and below) */
+@media only screen and (min-width: 767px) {
+    #myWork .card-container {
+        width: 50vw;
+    }
+}
+
 /* Small screen devices (600px and above) */
 @media only screen and (max-width: 1400px) {
-
     #myWork .card-container > .card {
         padding: 2rem;
         margin: 2rem;
-        height: 45ch;
         /*flex: auto;*/
     }
 }
@@ -28,7 +33,6 @@
         display: flex;
         flex-wrap: wrap;
         gap: 2em;
-        align-items: stretch;
     }
 
     #myWork .card-container > .card {
@@ -46,16 +50,17 @@
 }
 
 #myWork .card-container {
-    align-items: center;
+    align-items: stretch;
     justify-content: center;
     justify-items: center;
-    width: 50vw;
 }
 
 #myWork .card-container > .card {
-    display: grid;
-    grid-template-columns: 100%;
-    justify-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
 }
 
 #myWork .card-container > .card:hover{
@@ -64,7 +69,7 @@
     border-radius: 5px;
 }
 
-#myWork .card-container > .card > .card-image > img {
+#myWork .card-container > .card > div > .card-image > img {
     width: 10rem;
     height: 8rem;
 }
@@ -72,8 +77,6 @@
 
 #myWork .card-container > .card > .card-buttons{
     display: flex;
-    width: 100%;
-    height: 100%;
     align-items: center;
     justify-self: center;
     justify-content: center;
