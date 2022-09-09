@@ -29,3 +29,10 @@
 .resume-nav .button{
     margin: 10px;
 }
+
+.button > svg{
+    display: inline-flex;
+    align-self: center;
+    top: -.125em;
+    position: relative;
+}

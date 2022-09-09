@@ -4,6 +4,7 @@
 "use strict";
 
 import * as animationHelper from "./modules/animationHelper.js";
+import {equalHeights} from "./modules/equalHeights.js";
 
 // Call the init function once the dom has loaded fully
 document.addEventListener("DOMContentLoaded", init);
@@ -14,6 +15,7 @@ function init() {
     handleAboutMeToggles();
     handleResumeToggles();
     handleAccordions();
+    equalizeCardHeights();
 
     // Grab the divs inside the main element
     let oddDivs = document.querySelectorAll("main > div:nth-child(odd)");
@@ -42,7 +44,8 @@ function handleAboutMeToggles() {
             // Get the div that is directly below the target
             let belowDiv = target.parentElement.parentElement.nextElementSibling;
 
-            // Toggle the hidden class of the below div and any other intro divs that may be open.
+            // Toggle the hidden class of the below div and any other intro
+            // divs that may be open.
             animationHelper.toggleClasses("hidden", belowDiv, divs);
             animationHelper.reverseToggleClasses("button-selected", target, buttonSpans);
         }
@@ -103,9 +106,7 @@ function handleAccordions() {
             animationHelper.reverseToggleClasses("accordion-selected", this);
             for (let contentChild of contentChildren) {
                 scrollHeight += contentChild.scrollHeight + 100;
-                console.log(scrollHeight);
             }
-            console.log(contentChildren);
             if (accordionContent.style.maxHeight) {
                 accordionContent.style.maxHeight = null;
                 accordionContent.classList.remove("border-black");
@@ -121,8 +122,23 @@ function handleAccordions() {
     }
 }
 
+function equalizeCardHeights() {
+    // Grab all the card objects inside the myWork div
+    let cardContainers = document.querySelectorAll(".card-container");
+
+    for (const container of cardContainers) {
+        let cards = container.querySelectorAll(".card");
+        let cardParagraphs = container.querySelectorAll(".card >" +
+            " .card-description > p");
+
+        equalHeights(cards);
+        equalHeights(cardParagraphs);
+    }
+}
+
 /**
- * Joins any amount of array objects. They should be of the same type, but this will work with any type.
+ * Joins any amount of array objects. They should be of the same type, but this
+ * will work with any type.
  * @param arrays the arrays that you wish to join.
  * @returns {*[]} An array that contains the joined arrays.
  */

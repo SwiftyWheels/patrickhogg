@@ -28,12 +28,12 @@
         display: flex;
         flex-wrap: wrap;
         gap: 2em;
+        align-items: stretch;
     }
 
     #myWork .card-container > .card {
         padding: 2rem;
         margin: 2rem 0;
-        height: 45ch;
         flex: 1 1 30%; /*grow | shrink | basis */
     }
 }
